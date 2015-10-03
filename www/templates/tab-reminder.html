@@ -1,0 +1,49 @@
+<ion-view title="Add Reminder" type="text/ng-template">
+	<ion-nav-bar id="navBar" class="bar-dark">
+
+	 <div class="buttons right-buttons">
+     <a class="button button-icon icon-right ion-arrow-left-c" href="#/tab/home"></a>
+    </div>
+	</ion-nav-bar>
+  <ion-content class="padding">
+    <form ng-submit="createReminder(reminder)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Remind me to..." ng-value="Reminder" ng-model="reminder.name">
+          </label>
+        </div>
+        
+        <div class="list">
+        	<label class="item item-input item-select">
+    			<div class="input-label">
+      				Type
+    			</div>
+    			<select>
+      				<option name="Type" ng-value="FALSE" ng-model="reminder.memo" ng-checked="reminder.memo == 'true'" ng-init="reminder.memo = $scope.defaultReminder.memo">Memo</option>
+      				<option name="Type" ng-value="FALSE" ng-model="reminder.memo" ng-checked="reminder.memo == 'false'" ng-init="reminder.memo = $scope.defaultReminder.memo">Shopping</option>
+    			</select>
+  			</label>
+		</div>
+
+    <div>
+      <span class="input-label"></span>
+      <span class="input-label">To do at</span>
+      <ion-toggle ng-model="reminder.category" toggle-class="toggle-dark">Category</ion-toggle>
+
+      <div class="list">
+          <label class="item item-input item-select">
+          <select ng-options="category.id as category.name for category in categories" ng-model="reminder.itemCategory" ng-show=reminder.category></select><br>
+          <select ng-model="reminder.location" ng-options="location.id as location.name for location in locations" ng-show=!reminder.category></select><br>
+          </label>
+    </div>
+
+    </div>
+    
+ 		
+        <div class="padding">
+          <button type="submit" class="button button-block button-dark">Add</button>
+        </div>
+      </form>
+
+  </ion-content>
+</ion-view>

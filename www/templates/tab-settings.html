@@ -1,0 +1,16 @@
+<ion-view title="Settings">
+<ion-nav-bar id="navBar" class="bar-dark">
+</ion-nav-bar>
+  <ion-content class="padding">
+    <form ng-submit="saveSettings(settings)">
+	  <div>
+		  Alert distance:
+	  </div>
+	  <input name="alertDistance" type="number" step="any" min="0" ng-model="settings.alertDistance">Miles</input>
+
+	  <div class="padding">
+	    <button type="submit" class="button button-block button-dark">Save settings</button>
+	  </div>
+    </form>
+  </ion-content>
+</ion-view>

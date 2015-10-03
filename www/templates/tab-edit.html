@@ -1,0 +1,30 @@
+<ion-view title="Add Location" type="text/ng-template">
+<ion-nav-bar id="navBar" class="bar-dark">
+    <div class="buttons right-buttons">
+     <a class="button button-clear icon icon-right ion-arrow-left-c" href="#/tab/location"></a>
+    </div>
+</ion-nav-bar>
+<ion-content class="padding">
+<form ng-submit="createLocation(location);">
+  <label class="item item-input">
+    <input type="text" placeholder="Location name..." ng-model="location.name">
+  </label>
+  <span class="input-label"></span>
+  <span class="input-label">Categories</span>
+
+  <div class="list" ng-init="location.categories=[]">
+    <label class="item item-radio" ng-repeat="category in categories">
+      <input type="checkbox" value="{{category.name}}" check-list="location.categories">
+      <div class="item-content">
+        {{category.name}}
+      </div>
+      <i class="radio-icon ion-checkmark"></i>
+    </label>
+  </div>
+
+  <div class="padding">
+    <button type="submit" class="button button-block button-dark">Add Current Location</button>
+  </div>
+</form>
+</ion-content>
+</ion-view>

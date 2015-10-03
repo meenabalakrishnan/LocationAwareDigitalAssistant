@@ -1,0 +1,24 @@
+<ion-view title="Locations">
+<ion-nav-bar id="navBar" class="bar-dark">
+<ion-nav-buttons side="right">
+      <div class="buttons">
+        <a class="button button-icon ion-plus-round" href="#/tab/edit"></a>
+      </div>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon  ion-minus-round" ng-click="state.showDeleteLocation = !state.showDeleteLocation;"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="padding">
+    <ion-list show-delete="state.showDeleteLocation">
+      <ion-item class="item-icon-left" ng-repeat="location in locations" style="padding: 0">
+      <i class="icon ion-location"></i>
+       <ion-delete-button class="ion-minus-circled" ng-click="onLocationDelete(location)"></ion-delete-button>
+        <div class="item item-button-right" style="border: 0; padding:0" >
+          {{location.name}}
+        </div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

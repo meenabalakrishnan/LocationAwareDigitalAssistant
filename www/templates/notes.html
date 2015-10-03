@@ -1,0 +1,18 @@
+<ion-view title="Details">
+<ion-nav-bar class="bar-positive">
+    <div class="buttons right-buttons">
+     <a class="button button-clear icon icon-right ion-plus-round" href="#/tab/home"></a>
+    </div>
+</ion-nav-bar>
+  <ion-content class="padding">
+  <form ng-submit="editReminder(reminder);">
+	<label class="item item-input"> 
+ 	<textarea placeholder="Any more info?" ng-model="reminder.details"></textarea> 
+ 	</label> 
+
+  <div class="padding">
+    <button type="submit" class="button button-block button-positive">Add Details</button>
+  </div>
+</form>
+  </ion-content>
+</ion-view>

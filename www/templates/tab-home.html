@@ -1,0 +1,25 @@
+<ion-view title="Smart Reminders">
+<ion-nav-bar id="navBar" class="bar-dark">
+  <ion-nav-buttons class="padding" side="right">
+      <div class="buttons">
+        <a class="button button-icon ion-plus-round" href="#/tab/reminder"></a>
+      </div>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="left">
+      <button class="button button-icon  ion-minus-round" ng-click="state.showDeleteReminder = !state.showDeleteReminder;"></button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="padding">
+    <ion-list show-delete="state.showDeleteReminder">
+      <ion-item  class="item-icon-left" ng-repeat="reminder in reminders">
+      <i class="icon {{defaultCategories[reminder.itemCategory].icon}}"></i>
+        <div class="item item-button-right" style="border: 0; padding:0" >
+        <ion-delete-button class="ion-minus-circled" ng-click="onReminderDelete(reminder)"></ion-delete-button>
+          {{reminder.name}}
+    		  <button class="button button-icon ion-navicon-round" ng-click="showDetails()">
+          </button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
